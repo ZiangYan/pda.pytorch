@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -x
+set -e
+set -u
+
+python3.5 policy_attack.py --attack-type untargeted --ce-lmbd 1.0 3e-3 1.5e-3 1.5e-3 --clip-grad 5 --cosine-epsilon-round 0 --current-mean-mult 1 --dataset cifar10 --decay 0 --delta-mult 1 --empty-coeff 0.5 --empty-normal-mean-norm 0.003 --epsilon-schema fixed --exclude-std --exp-dir output/policy-s2-final-cifar10-madry_resnet50_l2_1_0-untargeted-l2 --fix-num-eval --fixed-epsilon-mult 0.4 --gamma 50.0 --grad-method policy_distance --grad-size 0 --image-id-ref output/policy-smtrain-large-batch-cifar10-madry_resnet50_l2_1_0-untargeted-l2/2020-08-27_02-10-49-fTNXN7Mv --init-boost --init-boost-stop 250 --init-boost-th 0.1 --init-empty-normal-mean --init-num-eval 25 --jump-count 1 --lr 0.0001 --lr-step-freq 0 --lr-step-mult 1.0 --max-baseline 1.0 --max-num-eval 10000 --max-query 25000 --max-sharp 0.5 --mean-reward --min-baseline 0.05 --min-epsilon-mult 0.01 --min-sharp 0.02 --minus-ca-sim 0.0 --momentum 0.0 --norm-type l2 --num-image 1000 --num-pre-tune-step 0 --optimizer Adam --part-id 0 --phase test --policy-arch vgg13_inv --policy-base-width 32 --policy-bilinear --policy-calibrate --policy-init-std 0.003 --policy-normalization-type none --policy-weight-fname output/policy-smtrain-large-batch-cifar10-madry_resnet50_l2_1_0-untargeted-l2/2020-08-27_02-10-49-fTNXN7Mv/results/model_best.pth --pre-tune-lr 0.0001 --pre-tune-th 1.0 --rescale-factor 0.5 --save-grad-pct 0.0 --seed 1234 --std-lr-mult 1 --std-reward --sub-base --tan-jump --try-split 0.0 0.25 --victim-arch madry_resnet50_l2_1_0 --victim-batch-size 50
+
